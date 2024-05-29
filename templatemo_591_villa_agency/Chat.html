@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT_ISD3A</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
-  />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <body>
   <main>
@@ -22,37 +19,13 @@
     </header>
 
     <section id="messages"></section>
-    <form>
-      <input
-        type="text"
-        name="message"
-        id="message"
-        placeholder="Message ChatGPT..."
-      />
-      <button type="button" id="send-message" class="color-gray" disabled>
+    <form id="message-form">
+      <input type="text" name="message" id="message" placeholder="Message ChatGPT...">
+      <button type="submit" id="send-message" class="color-gray" disabled>
         <i class="bi bi-arrow-up-square-fill"></i>
       </button>
     </form>
   </main>
-  <script src="script.js"></script>
-  <script src="scriptEstado.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const agentSelect = document.getElementById("agents");
-      agentSelect.addEventListener("change", () => {
-        const selectedAgent = agentSelect.value;
-        // Remover o agente atual
-        const currentScript = document.querySelector("script[data-agent]");
-        if (currentScript) {
-          currentScript.remove();
-        }
-        // Adicionar o novo agente selecionado
-        const newScript = document.createElement("script");
-        newScript.src = `${selectedAgent}.js`;
-        newScript.setAttribute("data-agent", selectedAgent);
-        document.body.appendChild(newScript);
-      });
-    });
-  </script>
+  <script src="redirect.js"></script>
 </body>
 </html>
