@@ -66,76 +66,76 @@ document.addEventListener("DOMContentLoaded", () => {
               ] 
           },
           { 
-            keyword: "ajuda", 
-            responses: [
-                "Claro, estou aqui para ajudar. Qual é a sua dúvida?",
-                "Estou à disposição para ajudar. O que você precisa?",
-                "Como posso ajudá-lo hoje?",
-                "Que tipo de ajuda você precisa?",
-                "Estou aqui para ajudar, diga-me o que você precisa."
-            ] 
-        },
-        { 
-            keyword: "tchau", 
-            responses: [
-                "Até mais! Tenha um ótimo dia!",
-                "Tchau! Até a próxima!",
-                "Até logo! Cuide-se!",
-                "Tchau! Foi um prazer ajudar.",
-                "Até mais! Volte sempre que precisar."
-            ] 
-        },
-        { 
-            keyword: "aula", 
-            responses: [
-                "As aulas começam às 8h e terminam às 12h.",
-                "Hoje teremos aula de Matemática e Português.",
-                "Não se esqueça da aula de História hoje à tarde.",
-                "As aulas são das 8h às 12h todos os dias.",
-                "Verifique o horário das aulas no portal do aluno."
-            ] 
-        },
-        { 
-            keyword: "horario", 
-            responses: [
-                "O horário de funcionamento da escola é das 8h às 18h.",
-                "As aulas começam às 8h e terminam às 12h.",
-                "Os professores estão disponíveis das 14h às 16h.",
-                "Verifique o horário completo no site da escola.",
-                "A secretaria funciona das 9h às 17h."
-            ] 
-        },
-        { 
-            keyword: "professor", 
-            responses: [
-                "Você pode encontrar os professores na sala dos professores durante o intervalo.",
-                "Os professores estarão disponíveis após as 14h.",
-                "Para falar com um professor, envie um e-mail agendando um horário.",
-                "Os professores estão na sala de professores durante o intervalo.",
-                "Você pode falar com os professores no final das aulas."
-            ] 
-        },
-        { 
-            keyword: "materia", 
-            responses: [
-                "Hoje teremos Matemática, Português e História.",
-                "A próxima matéria é Ciências.",
-                "Não se esqueça de estudar Geografia para amanhã.",
-                "Hoje à tarde teremos aula de Educação Física.",
-                "Prepare-se para a aula de Artes amanhã."
-            ] 
-        },
-        { 
-            keyword: "exame", 
-            responses: [
-                "O próximo exame será na sexta-feira, às 9h.",
-                "Prepare-se para o exame de Matemática na próxima segunda-feira.",
-                "O exame de História foi adiado para a próxima semana.",
-                "Verifique o calendário escolar para as datas dos exames.",
-                "Lembre-se de revisar suas anotações para o exame de Ciências."
-            ] 
-        }
-    
+              keyword: "ajuda", 
+              responses: [
+                  "Claro, estou aqui para ajudar. Qual é a sua dúvida?",
+                  "Estou à disposição para ajudar. O que você precisa?",
+                  "Como posso ajudá-lo hoje?",
+                  "Que tipo de ajuda você precisa?",
+                  "Estou aqui para ajudar, diga-me o que você precisa."
+              ] 
+          },
+          { 
+              keyword: "tchau", 
+              responses: [
+                  "Até mais! Tenha um ótimo dia!",
+                  "Tchau! Até a próxima!",
+                  "Até logo! Cuide-se!",
+                  "Tchau! Foi um prazer ajudar.",
+                  "Até mais! Volte sempre que precisar."
+              ] 
+          },
+          { 
+              keyword: "aula", 
+              responses: [
+                  "As aulas começam às 8h e terminam às 12h.",
+                  "Hoje teremos aula de Matemática e Português.",
+                  "Não se esqueça da aula de História hoje à tarde.",
+                  "As aulas são das 8h às 12h todos os dias.",
+                  "Verifique o horário das aulas no portal do aluno."
+              ] 
+          },
+          { 
+              keyword: "horario", 
+              responses: [
+                  "O horário de funcionamento da escola é das 8h às 18h.",
+                  "As aulas começam às 8h e terminam às 12h.",
+                  "Os professores estão disponíveis das 14h às 16h.",
+                  "Verifique o horário completo no site da escola.",
+                  "A secretaria funciona das 9h às 17h."
+              ] 
+          },
+          { 
+              keyword: "professor", 
+              responses: [
+                  "Você pode encontrar os professores na sala dos professores durante o intervalo.",
+                  "Os professores estarão disponíveis após as 14h.",
+                  "Para falar com um professor, envie um e-mail agendando um horário.",
+                  "Os professores estão na sala de professores durante o intervalo.",
+                  "Você pode falar com os professores no final das aulas."
+              ] 
+          },
+          { 
+              keyword: "materia", 
+              responses: [
+                  "Hoje teremos Matemática, Português e História.",
+                  "A próxima matéria é Ciências.",
+                  "Não se esqueça de estudar Geografia para amanhã.",
+                  "Hoje à tarde teremos aula de Educação Física.",
+                  "Prepare-se para a aula de Artes amanhã."
+              ] 
+          },
+          { 
+              keyword: "exame", 
+              responses: [
+                  "O próximo exame será na sexta-feira, às 9h.",
+                  "Prepare-se para o exame de Matemática na próxima segunda-feira.",
+                  "O exame de História foi adiado para a próxima semana.",
+                  "Verifique o calendário escolar para as datas dos exames.",
+                  "Lembre-se de revisar suas anotações para o exame de Ciências."
+              ] 
+          }
+      
       ];
 
       // Iterate through keywords to find a match
@@ -183,43 +183,62 @@ document.addEventListener("DOMContentLoaded", () => {
       return response;
   }
 
+  // Function to handle user message for goal-based agent
   function goalBasedAgentResponse(userMessage) {
-    let response = "Desculpe, não entendi sua pergunta.";
+      let response = "Desculpe, não entendi sua pergunta.";
 
-    // List of possible goals for the goal-based agent
-    const goals = [
-        { 
-            name: "obter notas altas", 
-            keywords: ["notas", "exame", "estudar"] 
-        },
-        { 
-            name: "auxiliar os alunos", 
-            keywords: ["ajuda", "ensinar", "tutoria"] 
-        },
-        { 
-            name: "garantir a ordem na escola", 
-            keywords: ["disciplina", "ordem", "comportamento"] 
-        }
-        // Add more goals as needed
-    ];
+      // List of possible goals for the goal-based agent
+      const goals = [
+          { 
+              name: "obter notas altas", 
+              keywords: ["notas", "exame", "estudar"] 
+          },
+          { 
+              name: "auxiliar os alunos", 
+              keywords: ["ajuda", "ensinar", "tutoria"] 
+          },
+          { 
+              name: "garantir a ordem na escola", 
+              keywords: ["disciplina", "ordem", "comportamento"] 
+          }
+          // Add more goals as needed
+      ];
 
-    // Check if the user message relates to any of the goals
-    for (let i = 0; i < goals.length; i++) {
-        for (let j = 0; j < goals[i].keywords.length; j++) {
-            if (userMessage.toLowerCase().includes(goals[i].keywords[j])) {
-                // Choose an action based on the identified goal
-                response = chooseActionForGoal(goals[i].name);
-                break;
-            }
-        }
-        // If a goal has been identified, no need to continue checking other goals
-        if (response !== "Desculpe, não entendi sua pergunta.") {
-            break;
-        }
-    }
+      // Check if the user message relates to any of the goals
+      for (let i = 0; i < goals.length; i++) {
+          for (let j = 0; j < goals[i].keywords.length; j++) {
+              if (userMessage.toLowerCase().includes(goals[i].keywords[j])) {
+                  // Choose an action based on the identified goal
+                  response = chooseActionForGoal(goals[i].name);
+                  break;
+              }
+          }
+          // If a goal has been identified, no need to continue checking other goals
+          if (response !== "Desculpe, não entendi sua pergunta.") {
+              break;
+          }
+      }
 
-    return response;
-}
+      addMessage("bot", response);
+  }
 
+  // Function to choose an action based on the identified goal
+  function chooseActionForGoal(goal) {
+      let action = "Desculpe, não entendi sua pergunta.";
 
+      // Define actions based on goals
+      const actions = {
+          "obter notas altas": "Para obter notas altas, é importante revisar suas anotações diariamente e fazer exercícios práticos.",
+          "auxiliar os alunos": "Estou aqui para ajudar! Qual é a sua dúvida específica?",
+          "garantir a ordem na escola": "Para manter a ordem na escola, siga as regras e respeite os professores e colegas."
+          // Add more actions as needed
+      };
+
+      // Determine the action based on the identified goal
+      if (goal in actions) {
+          action = actions[goal];
+      }
+
+      return action;
+  }
 });
